@@ -1,4 +1,4 @@
-# Spd
+# MPA
 
 > 主要参考代码 [kingvid-chan](https://github.com/kingvid-chan/webpack2-lessons) ,特此致谢
 
