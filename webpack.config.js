@@ -57,6 +57,7 @@ module.exports = {
                 test: /\.scss$/,
                 use: process.env.NODE_ENV === 'prod' ? ExtractTextPlugin.extract({
                     fallback: 'style-loader',
+                    publicPath: '../',
                     use: [
                         {
                             loader: 'css-loader',
