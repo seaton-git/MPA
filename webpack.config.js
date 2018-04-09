@@ -49,9 +49,9 @@ module.exports = {
                             options: {
                                 minimize: true
                             }
-                        }
+                        }, 'postcss-loader'
                     ]
-                }) : ['style-loader', 'css-loader']
+                }) : ['style-loader', 'css-loader', 'postcss-loader']
             },
             {
                 test: /\.scss$/,
@@ -64,13 +64,13 @@ module.exports = {
                             options: {
                                 minimize: true
                             }
-                        }, 'sass-loader'
+                        }, 'sass-loader', 'postcss-loader'
                     ]
-                }) : ['style-loader', 'css-loader', 'sass-loader']
+                }) : ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader']
             },
             {
                 test: /\.(jpg|png|gif)$/,
-                use: ['url-loader?limit=10000&name=img/[name].[hash:7].[ext]']
+                use: ['url-loader?limit=10&name=image/[name].[hash:7].[ext]']
             },
             {
                 test: /.\.html$/,
@@ -140,6 +140,9 @@ module.exports = {
     devServer: {
         // 静态文件目录位置
         contentBase: path.resolve(__dirname, 'src'),
+
+        host: '0.0.0.0',
+
         // 模块热更新
         hot: true,
         // 在命令行显示打包信息
